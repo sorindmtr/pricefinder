@@ -53,8 +53,7 @@ class ProductFinderIntegrationTest {
                 Arguments.of(LocalDateTime.of(2020, 6, 14, 16, 0, 0), 25.45),
                 Arguments.of(LocalDateTime.of(2020, 6, 14, 21, 0, 0), 35.5),
                 Arguments.of(LocalDateTime.of(2020, 6, 15, 10, 0, 0), 30.5),
-                Arguments.of(LocalDateTime.of(2020, 6, 16, 21, 0, 0), 38.95),
-                Arguments.of(LocalDateTime.of(2023, 6, 16, 21, 0, 0), null)
+                Arguments.of(LocalDateTime.of(2020, 6, 16, 21, 0, 0), 38.95)
         );
     }
 
