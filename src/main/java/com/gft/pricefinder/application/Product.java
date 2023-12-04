@@ -1,4 +1,4 @@
-package com.gft.pricefinder.repository.dao;
+package com.gft.pricefinder.application;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

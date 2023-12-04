@@ -1,9 +1,8 @@
-package com.gft.pricefinder.repository;
+package com.gft.pricefinder.application;
 
-import com.gft.pricefinder.repository.dao.Product;
+import com.gft.pricefinder.application.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {

@@ -1,7 +1,6 @@
-package com.gft.pricefinder.web.controller;
+package com.gft.pricefinder.application;
 
-import com.gft.pricefinder.service.ProductFinderService;
-import com.gft.pricefinder.web.dto.ProductDTO;
+import com.gft.pricefinder.domain.ProductFinderService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +18,7 @@ public class ProductFinderController {
     private final ProductFinderService productFinderService;
 
     @GetMapping(value = "/{id}", produces = "application/json")
-    public ProductDTO getByIdDateTimeBrand(@PathVariable Long id, @RequestParam LocalDateTime dateOfPrice, @RequestParam Long brandId) {
+    public ProductResponse getByIdDateTimeBrand(@PathVariable Long id, @RequestParam LocalDateTime dateOfPrice, @RequestParam Long brandId) {
         return productFinderService.getByIdDateTimeBrand(id, dateOfPrice, brandId);
     }
 }

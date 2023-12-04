@@ -1,4 +1,4 @@
-package com.gft.pricefinder;
+package com.gft.pricefinder.infrastructure;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.dao.DataAccessException;
