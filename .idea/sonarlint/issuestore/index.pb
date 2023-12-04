@@ -61,3 +61,8 @@ r
 Bsrc/main/java/com/gft/pricefinder/domain/ProductFinderService.java,9\a\9a7568b904cd5f4c7283dd177f32ef120caf8fc4
 j
 :src/main/java/com/gft/pricefinder/application/Product.java,4\b\4b14f84ae1a5141b2f3765b14e0e6bf959edda04
+k
+;src/main/java/com/gft/pricefinder/domain/ProductMapper.java,8\8\885d4c474ade3c8e53191c1ba30adcc3b2b18646
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
