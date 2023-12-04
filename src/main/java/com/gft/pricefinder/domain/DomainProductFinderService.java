@@ -1,7 +1,6 @@
 package com.gft.pricefinder.domain;
 
 import com.gft.pricefinder.application.Product;
-import com.gft.pricefinder.application.PriceResponse;
 import com.gft.pricefinder.application.ProductResponse;
 import com.gft.pricefinder.application.ProductRepository;
 import lombok.AllArgsConstructor;
@@ -16,6 +15,7 @@ import java.util.List;
 public class DomainProductFinderService implements ProductFinderService {
 
     private final ProductRepository productRepository;
+    private final ProductMapper productMapper = new ProductMapper();
 
     @Override
     public ProductResponse getByIdDateTimeBrand(Long id, LocalDateTime atDateTime, Long brandId) {
@@ -25,11 +25,6 @@ public class DomainProductFinderService implements ProductFinderService {
                 .max(Comparator.comparing(Product::getPriority))
                 .orElse(new Product());
 
-        return mapProductToProductDto(product);
-    }
-
-    private ProductResponse mapProductToProductDto(Product first) {
-        return new ProductResponse(first.getProductId(), first.getBrandId(), first.getStartDate(), first.getEndDate(),
-                new PriceResponse(first.getPrice(), first.getCurrency()));
+        return productMapper.mapProductToProductDto(product);
     }
 }
