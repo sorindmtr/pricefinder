@@ -6,8 +6,8 @@ import com.gft.pricefinder.application.ProductResponse;
 
 public class ProductMapper {
 
-    ProductResponse mapProductToProductDto(Product first) {
-        return new ProductResponse(first.getProductId(), first.getBrandId(), first.getStartDate(), first.getEndDate(),
-                new PriceResponse(first.getPrice(), first.getCurrency()));
+    ProductResponse mapProductToProductDto(Product product) {
+        return new ProductResponse(product.getProductId(), product.getBrandId(), product.getStartDate(), product.getEndDate(),
+                new PriceResponse(product.getPrice(), product.getCurrency()));
     }
 }

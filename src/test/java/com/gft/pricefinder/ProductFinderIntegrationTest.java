@@ -24,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ProductFinderIntegrationTest {
 
-    private static final String url = "/prices/";
+    private static final String url = "/prices";
     private static final String productId = "35455";
     private static final String brandId = "1";
     @Autowired
@@ -39,7 +39,7 @@ class ProductFinderIntegrationTest {
     @ParameterizedTest
     @MethodSource("pricesByDate")
     void getDifferentPricesByProductAndTime(LocalDateTime dateTime, Double price) throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get(url + productId)
+        this.mockMvc.perform(MockMvcRequestBuilders.get(url).param("productId", productId)
                         .param("dateOfPrice", dateTime.toString()).param("brandId", brandId))
                 .andExpect(status().isOk()).andExpect(jsonPath("$.price.price").value(price));
     }

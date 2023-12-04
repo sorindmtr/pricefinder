@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDateTime;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -18,13 +19,12 @@ public class DomainProductFinderService implements ProductFinderService {
     private final ProductMapper productMapper = new ProductMapper();
 
     @Override
-    public ProductResponse getByIdDateTimeBrand(Long id, LocalDateTime atDateTime, Long brandId) {
+    public Optional<ProductResponse> getByIdDateTimeBrand(Long id, Long brandId, LocalDateTime atDateTime) {
         List<Product> allByIdAndBrand = productRepository.findByProductIdAndBrandId(id, brandId);
-        Product product = allByIdAndBrand.stream()
+
+        return allByIdAndBrand.stream()
                 .filter(p -> p.getStartDate().isBefore(atDateTime) && p.getEndDate().isAfter(atDateTime))
                 .max(Comparator.comparing(Product::getPriority))
-                .orElse(new Product());
-
-        return productMapper.mapProductToProductDto(product);
+                .map(productMapper::mapProductToProductDto);
     }
 }
