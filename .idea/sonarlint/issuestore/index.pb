@@ -72,3 +72,5 @@ z
 Jsrc/main/java/com/gft/pricefinder/application/JsonProcessingException.java,f\4\f418e34d6bdb20e32f6473f9366193ea51b4b3f8
 m
 =src/main/java/com/gft/pricefinder/application/JsonParser.java,5\8\581fe472ee1361e9bdad8e3739ccb6bd5d537df3
+|
+Lsrc/test/java/com/gft/pricefinder/domain/DomainProductFinderServiceTest.java,c\b\cb9b49c9def9f88f4c1a831b9a7f3a3948be72bd

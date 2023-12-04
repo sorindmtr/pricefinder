@@ -16,7 +16,7 @@ import java.util.Optional;
 public class DomainProductFinderService implements ProductFinderService {
 
     private final ProductRepository productRepository;
-    private final ProductMapper productMapper = new ProductMapper();
+    private final ProductMapper productMapper;
 
     @Override
     public Optional<ProductResponse> getByIdDateTimeBrand(Long id, Long brandId, LocalDateTime atDateTime) {
